@@ -1,0 +1,19 @@
+var savedRuler= app.preferences.rulerUnits;  
+app.preferences.rulerUnits = Units.PIXELS;  
+var w = app.activeDocument.width;  
+var h = app.activeDocument.height;  
+var guides = app.activeDocument.guides;
+var fifthWidth = w/5;
+var fifthHeight = h/5;
+
+for (i = 1; i <5 ;i++)
+    {
+        guides.add(Direction.HORIZONTAL,fifthHeight*[i]);
+     }
+
+for (i = 1; i <5 ;i++)
+    {
+        guides.add(Direction.VERTICAL,fifthWidth*[i]);
+     }
+
+app.preferences.rulerUnits = savedRuler;  
